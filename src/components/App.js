@@ -8,6 +8,12 @@ import {
   Link
 } from "react-router-dom";
 
+import { Rate , Breadcrumb } from 'antd';
+import 'antd/dist/antd.css';
+
+// import { Button, Checkbox } from 'antd';
+// import 'antd/dist/antd.css';
+
 function App() {
   return (
     <div className="App">
@@ -15,24 +21,15 @@ function App() {
 
       <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
+      <Breadcrumb.Item> <Link to="/">Home</Link></Breadcrumb.Item>
             <Link to="/todo">To Do!</Link>
-          </li>
-        </ul>
-
+            </div>
+          <div>
+            <hr />
+           Please Rate My App: <Rate/>
+          </div>
+            <div>
         <hr />
-
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
         <Switch>
           <Route exact path="/">
             <Home />
@@ -51,8 +48,8 @@ function App() {
 
 function Home() {
   return (
-    <div>
-      <h2>Home</h2>
+    <div >
+      <h1> Home</h1>
     </div>
   );
 }

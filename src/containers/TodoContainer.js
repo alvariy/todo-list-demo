@@ -30,16 +30,16 @@ const mapDispatchToProps =  dispatch => ({
     type: 'REFRESH_TODOS',
     payload: todos
   }),
-  
+
   updateTodos: (todo) => {
     TodoResource.updateTodo(todo)
-    .then(res => res.json())
-    .then(({todo}) => {
-      dispatch({
-        type: 'UPDATE_TODO',
-        payload: {todo}
-      })
-    });
+    // .then(res => res.json())
+    // .then(({todo}) => {
+    //   dispatch({
+    //     type: 'UPDATE_TODO',
+    //     payload: {todo}
+    //   })
+    // });
   }
 });
 

@@ -5,7 +5,7 @@ export default class Todos extends Component {
 
   changeStatus = (todoItem) => {
     this.props.onUpdate(todoItem);
-    console.log("todoItem == ", todoItem)
+    // console.log("todoItem == ", todoItem)
   };
   render() {
     const {todos} = this.props;
@@ -20,5 +20,5 @@ export default class Todos extends Component {
         }
       </div>
     )
-  }
+  } 
 }
