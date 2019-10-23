@@ -14,18 +14,23 @@ export default class TodoWrapper extends Component {
         this.props.refreshTodos( res._embedded.todos)
       })
   }
-
   addNewTodo = newTodoContent => {
     if(newTodoContent) {
       this.props.createNewTodo(newTodoContent);
     }
-  };
+  }
+
+  updateTodo = (todo) =>{
+      this.props.updateTodos(todo);
+  }
+  
+  
 
   render() {
     return (
       <div className="todo-wrapper">
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
-        <Todos todos={this.props.todos}/>
+        <Todos todos={this.props.todos} onUpdate={this.updateTodo}/>
       </div>
     )
   }

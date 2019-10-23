@@ -24,12 +24,23 @@ const mapDispatchToProps =  dispatch => ({
           type: 'ADD_TODO',
           payload: {id, status, content}
         })
-      })
+      });
   },
   refreshTodos: todos => dispatch({
     type: 'REFRESH_TODOS',
     payload: todos
-  })
+  }),
+  
+  updateTodos: (todo) => {
+    TodoResource.updateTodo(todo)
+    .then(res => res.json())
+    .then(({todo}) => {
+      dispatch({
+        type: 'UPDATE_TODO',
+        payload: {todo}
+      })
+    });
+  }
 });
 
 export default connect(
