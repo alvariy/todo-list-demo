@@ -17,5 +17,8 @@ export default {
       "status" : todo.status
     }),
     headers: new Headers({ 'Content-Type': 'application/json'})
+  }),
+  getActive: (todo) => fetch("http://localhost:8080/api/todos/search/statusOfTodos?status=active", {
+    mode: 'cors',
   })
 }

@@ -31,6 +31,11 @@ const mapDispatchToProps =  dispatch => ({
     payload: todos
   }),
 
+  getActive: (todo) => dispatch({
+    type: 'GET_ACTIVE',
+    payload: todo
+  }),
+
   updateTodos: (todo) => {
     TodoResource.updateTodo(todo)
     // .then(res => res.json())

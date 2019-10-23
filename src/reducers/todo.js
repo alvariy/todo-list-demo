@@ -27,6 +27,11 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         todos: [...state.todos, payload]
       };
+    case "GET_ACTIVE":
+      return{
+        ...state,
+        todos: [...state.todos, payload]
+      }
 
     default:
       return state

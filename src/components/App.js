@@ -8,7 +8,7 @@ import {
   Link
 } from "react-router-dom";
 
-import { Rate , Breadcrumb } from 'antd';
+import { Rate , Breadcrumb} from 'antd';
 import 'antd/dist/antd.css';
 
 // import { Button, Checkbox } from 'antd';
@@ -40,7 +40,6 @@ function App() {
         </Switch>
       </div>
     </Router>
-  
       </div>
     </div>
   );
