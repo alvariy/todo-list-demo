@@ -36,6 +36,11 @@ const mapDispatchToProps =  dispatch => ({
     payload: todo
   }),
 
+  getCompleted: (todo) => dispatch({
+    type: 'GET_COMPLETED',
+    payload: todo
+  }),
+
   updateTodos: (todo) => {
     TodoResource.updateTodo(todo)
     // .then(res => res.json())

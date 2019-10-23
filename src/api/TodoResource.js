@@ -18,7 +18,10 @@ export default {
     }),
     headers: new Headers({ 'Content-Type': 'application/json'})
   }),
-  getActive: (todo) => fetch("http://localhost:8080/api/todos/search/statusOfTodos?status=active", {
+  getActive: () => fetch("http://localhost:8080/api/todos/search/statusOfTodos?status=active", {
+    mode: 'cors',
+  }),
+  getCompleted: () => fetch("http://localhost:8080/api/todos/search/statusOfTodos?status=completed", {
     mode: 'cors',
   })
 }

@@ -32,6 +32,20 @@ export default class TodoWrapper extends Component {
       .then(res => res.json())
       .then(res => {this.props.refreshTodos( res._embedded.todos)})
   }
+
+  displayCompleted = () =>{
+    TodoResource.getCompleted()
+      .then(res => res.json())
+      .then(res => {this.props.refreshTodos( res._embedded.todos)})
+  }
+
+  displayAllTasks = () =>{
+    TodoResource.getAll()
+    .then(res => res.json())
+    .then(res => {
+      this.props.refreshTodos( res._embedded.todos)
+    })
+  }
   
 
   render() {
@@ -40,8 +54,8 @@ export default class TodoWrapper extends Component {
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
         <Todos todos={this.props.todos} onUpdate={this.updateTodo}/>
         <Button onClick={this.displayAllTodo}>Active</Button>
-        <Button>Completed</Button>
-        <Button>All</Button>
+        <Button onClick={this.displayCompleted}>Completed</Button>
+        <Button onClick={this.displayAllTasks}>All</Button>
       </div>
     )
   }

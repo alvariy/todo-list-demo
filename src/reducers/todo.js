@@ -31,6 +31,11 @@ export default (state = initialState, { type, payload }) => {
       return{
         ...state,
         todos: [...state.todos, payload]
+      };
+      case "GET_COMPLETED":
+      return{
+        ...state,
+        todos: [...state.todos, payload]
       }
 
     default:
