@@ -31,12 +31,12 @@ const mapDispatchToProps =  dispatch => ({
     payload: todos
   }),
 
-  getActive: (todo) => dispatch({
+  getActive: todo => dispatch({
     type: 'GET_ACTIVE',
     payload: todo
   }),
 
-  getCompleted: (todo) => dispatch({
+  getCompleted: todo => dispatch({
     type: 'GET_COMPLETED',
     payload: todo
   }),

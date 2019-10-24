@@ -36,7 +36,9 @@ export default class TodoWrapper extends Component {
   displayCompleted = () =>{
     TodoResource.getCompleted()
       .then(res => res.json())
-      .then(res => {this.props.refreshTodos( res._embedded.todos)})
+      .then(res => {
+        this.props.refreshTodos( res._embedded.todos)
+      })
   }
 
   displayAllTasks = () =>{

@@ -36,7 +36,7 @@ export default (state = initialState, { type, payload }) => {
       return{
         ...state,
         todos: [...state.todos, payload]
-      }
+      };
 
     default:
       return state

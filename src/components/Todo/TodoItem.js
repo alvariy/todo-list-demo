@@ -10,7 +10,7 @@ export default class TodoItem extends Component {
   }
   changeValue = (e) => {
     e && e.preventDefault();
-    const { status } = this.state;
+    const { status } = this.props.todo;
     const isCompleted = status === 'completed' ;
     this.props.onChange({...this.props.todo, status: isCompleted ? 'active': 'completed'});
     this.setState({status: isCompleted ? 'active': 'completed'})
@@ -18,7 +18,7 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo } = this.props;
-    const isCompleted = this.state.status === 'completed' ;
+    const isCompleted = this.props.todo.status === 'completed' ;
     return (
       <div className="todo-item" onClick={this.changeValue}>
         <div>
@@ -28,7 +28,7 @@ export default class TodoItem extends Component {
           </label>
         </div>
         <div className="content">
-          <label className={this.state.status === 'completed' ? 'cross-line' : ''}>{todo.content}</label>
+          <label className={this.props.todo.status === 'completed' ? 'cross-line' : ''}>{todo.content}</label>
         </div>
       </div>
     )
